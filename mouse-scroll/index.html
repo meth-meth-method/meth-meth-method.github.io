@@ -68,13 +68,12 @@
         </div>
 
         <script>
-            const scale = 2;
             let prevEvent;
             scrollable.addEventListener('mousemove', event => {
                 if (event.buttons === 1) {
                     event.preventDefault();
                     const deltaX = event.clientX - prevEvent.clientX;
-                    scrollable.scrollLeft -= deltaX * scale;
+                    scrollable.scrollLeft -= deltaX;
                 }
                 prevEvent = event;
             });
