@@ -73,7 +73,7 @@
                 if (event.buttons === 1) {
                     event.preventDefault();
                     const deltaX = event.clientX - prevEvent.clientX;
-                    scrollable.scrollLeft -= deltaX;
+                    scrollable.scrollLeft -= deltaX * 2;
                 }
                 prevEvent = event;
             });
