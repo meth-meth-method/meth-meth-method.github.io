@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <style>
+            body {
+                background: #111 url('https://i.imgur.com/eWtfMME.png');
+                background-size: cover;
+                color: #fff;
+                font-family: sans-serif;
+                font-size: 16vw;
+            }
+            #scrollable {
+                perspective: 60vw;
+                overflow: hidden;
+            }
+            ul {
+                display: flex;
+                list-style-type: none;
+                pointer-events: none;
+            }
+            li {
+                background: rgba(0, 174, 255, 0.185);
+                border: solid 1px rgba(255, 255, 255, 0.568);
+                display: flex;
+                    align-items: center;
+                    flex-shrink: 0;
+                    justify-content: center;
+                margin: 0 -3.6vw;
+                height: 25vw;
+                width: 25vw;                
+            }
+            li:nth-child(odd) {
+                transform: rotateY(-45deg);
+            }
+            li:nth-child(even) {
+                transform: rotateY(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="scrollable">
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>I</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+                <li>N</li>
+                <li>O</li>
+                <li>P</li>
+                <li>Q</li>
+                <li>R</li>
+                <li>S</li>
+                <li>T</li>
+                <li>U</li>
+                <li>V</li>
+                <li>W</li>
+                <li>X</li>
+                <li>Y</li>
+                <li>Z</li>
+            </ul>            
+        </div>
+
+        <script>
+            let prevEvent;
+            scrollable.addEventListener('mousemove', event => {
+                if (event.buttons === 1) {
+                    const deltaX = event.clientX - prevEvent.clientX;
+                    scrollable.scrollLeft -= deltaX * 2;
+                }
+                prevEvent = event;
+            });
+        </script>
+    </body>
+</html>
