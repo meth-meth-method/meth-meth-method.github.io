@@ -15,7 +15,6 @@
             ul {
                 display: flex;
                 list-style-type: none;
-                pointer-events: none;
             }
             li {
                 background: rgba(0, 174, 255, 0.185);
@@ -26,7 +25,7 @@
                     justify-content: center;
                 margin: 0 -3.6vw;
                 height: 25vw;
-                width: 25vw;                
+                width: 25vw;
             }
             li:nth-child(odd) {
                 transform: rotateY(-45deg);
@@ -69,11 +68,13 @@
         </div>
 
         <script>
+            const scale = 2;
             let prevEvent;
             scrollable.addEventListener('mousemove', event => {
                 if (event.buttons === 1) {
+                    event.preventDefault();
                     const deltaX = event.clientX - prevEvent.clientX;
-                    scrollable.scrollLeft -= deltaX * 2;
+                    scrollable.scrollLeft -= deltaX * scale;
                 }
                 prevEvent = event;
             });
