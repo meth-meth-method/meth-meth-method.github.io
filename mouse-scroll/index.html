@@ -15,6 +15,7 @@
             ul {
                 display: flex;
                 list-style-type: none;
+                pointer-events: none;
             }
             li {
                 background: rgba(0, 174, 255, 0.185);
@@ -71,7 +72,6 @@
             let prevEvent;
             scrollable.addEventListener('mousemove', event => {
                 if (event.buttons === 1) {
-                    event.preventDefault();
                     const deltaX = event.clientX - prevEvent.clientX;
                     scrollable.scrollLeft -= deltaX * 2;
                 }
