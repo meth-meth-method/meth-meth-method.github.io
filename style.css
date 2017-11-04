@@ -1,0 +1,85 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #111 url('/img/mmm-back.png');
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Signika', sans-serif;
+    margin: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header {
+    flex: 0 1 auto;
+    perspective: 500px;
+    text-align: center;
+}
+
+header img {
+    margin: 2em;
+}
+
+footer {
+    background: #333;
+    color: #ddd;
+    flex: 0 1 auto;
+}
+
+h1, h2, h3 {
+    background: black;
+    color: yellow;
+    display: inline;
+    line-height: 1.8;
+    padding: 0.1em 0.3em;
+}
+
+h2 {
+    margin-left: 8vw;
+}
+
+#welcome {
+    margin: 2em 10vw;
+}
+
+#latest-episodes {
+
+}
+
+.episodes {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.episodes li {
+    margin: 2em;
+    opacity: 0.9;
+    perspective: 500px;
+    transition: all 0.3s;
+}
+
+.episodes li .content {
+    background: rgba(0, 0, 0, .2) center;
+    background-size: cover;
+    box-shadow: 0 20px 30px -15px #000;
+    transform: rotateY(5deg);
+}
+
+.episodes li iframe,
+.episodes li .content {
+    height: 270px;
+    width: 480px;
+}
+
+.episodes li:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
