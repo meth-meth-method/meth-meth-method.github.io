@@ -24,10 +24,16 @@ searchChannel('UC8A0M0eDttdB11MHxX58vXQ', 8)
         $video.appendChild($content);
         $episodeList.appendChild($video);
 
-        loadVideo(item.id.videoId)
-        .then(data => {
-            $content.innerHTML = data.items[0].player.embedHtml;
-        });
+        function createEmbed() {
+            loadVideo(item.id.videoId)
+            .then(data => {
+                $content.innerHTML = data.items[0].player.embedHtml;
+            });
+
+            $content.removeEventListener('mousemove', createEmbed);
+        }
+
+        $content.addEventListener('mousemove', createEmbed);
     });
 });
 
